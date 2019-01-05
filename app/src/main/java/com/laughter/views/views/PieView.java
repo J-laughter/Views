@@ -78,7 +78,7 @@ public class PieView extends View {
         if (specMode == MeasureSpec.EXACTLY){
             result = specSize;
         }else {
-            result = DensityUtil.dip2px(mContext, 240);
+            result = DensityUtil.dip2px(mContext, 160);
             if (specMode == MeasureSpec.AT_MOST){
                 result = Math.min(result, specSize);
             }
@@ -94,7 +94,7 @@ public class PieView extends View {
         if (specMode == MeasureSpec.EXACTLY){
             result = specSize;
         }else {
-            result = DensityUtil.dip2px(mContext, 240);
+            result = DensityUtil.dip2px(mContext, 160);
             if (specMode == MeasureSpec.AT_MOST){
                 result = Math.min(result, specSize);
             }
