@@ -1,15 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    tools:context=".activity.MainActivity">
+    tools:context=".activity.MainActivity"
+    android:layout_margin="16dp">
 
-    <com.laughter.views.views.PieView
-        android:id="@+id/pie"
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
 
-</LinearLayout>
+        <com.laughter.views.views.PieView
+            android:id="@+id/pie_view"
+            android:layout_width="120dp"
+            android:layout_height="120dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pieview"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:textColor="@color/colorTransBlack"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <com.laughter.views.views.CheckView
+            android:id="@+id/check_view"
+            android:layout_width="88dp"
+            android:layout_height="88dp" />
+
+        <Button
+            android:id="@+id/but_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="0dp"
+            android:text="@string/check"
+            android:textAllCaps="false" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/checkview"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:textColor="@color/colorTransBlack"/>
+    </LinearLayout>
+
+</RelativeLayout>

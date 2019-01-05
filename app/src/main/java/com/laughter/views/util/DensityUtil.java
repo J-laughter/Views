@@ -14,4 +14,9 @@ public class DensityUtil {
         float density = context.getResources().getDisplayMetrics().density;
         return (int)(value * density + 0.5f);
     }
+
+    public static int px2dip(Context context, int value) {
+        float density = context.getResources().getDisplayMetrics().density;
+        return (int)(value / density + 0.5f);
+    }
 }
