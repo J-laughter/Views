@@ -3,4 +3,5 @@
     <string name="pieview">PieView</string>
     <string name="checkview">CheckView</string>
     <string name="check">Check</string>
+    <string name="start">Start</string>
 </resources>

@@ -56,4 +56,34 @@
             android:textColor="@color/colorTransBlack"/>
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:orientation="vertical">
+
+        <com.laughter.views.views.QQStepView
+            android:id="@+id/step_view"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            app:stepTextSize="16sp"/>
+
+        <EditText
+            android:id="@+id/edit_step"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:textSize="16sp"
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/but_update_step"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:minHeight="0dp"
+            android:textAllCaps="false"
+            android:text="@string/start"/>
+    </LinearLayout>
+
 </RelativeLayout>
