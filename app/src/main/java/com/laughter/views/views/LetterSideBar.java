@@ -10,7 +10,7 @@ import android.view.MotionEvent;
 import android.view.View;
 
 /**
- * 作者： 江浩
+ * 作者： laughter_jiang
  * 创建时间： 2019/2/20
  * 描述： com.laughter.view.views
  */
