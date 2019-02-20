@@ -8,10 +8,12 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.laughter.views.R;
 import com.laughter.views.views.CheckView;
 import com.laughter.views.model.PieData;
+import com.laughter.views.views.LetterSideBar;
 import com.laughter.views.views.PieView;
 import com.laughter.views.views.QQStepView;
 
@@ -30,7 +32,7 @@ import butterknife.OnClick;
  * 描述： com.laughter.views.activity
  */
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements LetterSideBar.LetterTouchListener {
 
     private List<PieData> mDataList;
     private final static String CHECK = "Check";
@@ -42,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.step_view) QQStepView mStepView;
     @BindView(R.id.edit_step) EditText editStep;
     @BindView(R.id.but_update_step) Button butStep;
+    @BindView(R.id.tv_letter) TextView tvLetter;
+    @BindView(R.id.letter_side_bar) LetterSideBar mLetterSideBar;
 
     @BindColor(R.color.colorTheme) int mThemeColor;
 
@@ -68,6 +72,8 @@ public class MainActivity extends AppCompatActivity {
         mCheckView.setAnimDuration(650);
 
         mStepView.setStepNumMax(10000);
+
+        mLetterSideBar.setTouchListener(this);
     }
 
     @OnClick({R.id.but_check, R.id.but_update_step})
@@ -100,6 +106,16 @@ public class MainActivity extends AppCompatActivity {
                 break;
             default:
                 break;
+        }
+    }
+
+    @Override
+    public void onTouch(String letter, boolean isTouching) {
+        if (isTouching && !letter.equals("❤") && !letter.equals("#")) {
+            tvLetter.setText(letter);
+            tvLetter.setVisibility(View.VISIBLE);
+        }else {
+            tvLetter.setVisibility(View.GONE);
         }
     }
 }
