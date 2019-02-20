@@ -13,7 +13,7 @@ import com.laughter.views.R;
 
 
 /**
- * 作者： 江浩
+ * 作者： laughter_jiang
  * 创建时间： 2019/2/19
  * 描述： com.laughter.view.views
  */
