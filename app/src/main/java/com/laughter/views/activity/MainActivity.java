@@ -15,7 +15,6 @@ import com.laughter.views.fragment.CheckViewFragment;
 import com.laughter.views.fragment.LetterSlideBarFragment;
 import com.laughter.views.fragment.PieViewFragment;
 import com.laughter.views.fragment.StepViewFragment;
-import com.laughter.views.views.QQStepView;
 
 import java.util.ArrayList;
 import java.util.List;

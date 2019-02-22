@@ -43,5 +43,4 @@
         android:text="@string/check"
         android:textSize="20sp"
         android:textAllCaps="false" />
-
 </RelativeLayout>
