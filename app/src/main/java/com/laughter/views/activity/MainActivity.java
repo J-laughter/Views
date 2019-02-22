@@ -11,7 +11,11 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.laughter.views.R;
+import com.laughter.views.fragment.CheckViewFragment;
+import com.laughter.views.fragment.LetterSlideBarFragment;
 import com.laughter.views.fragment.PieViewFragment;
+import com.laughter.views.fragment.StepViewFragment;
+import com.laughter.views.views.QQStepView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +34,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @BindView(R.id.view_list)
     ListView mListView;
 
+    private final String PIEVIEW = "PieView";
+    private final String CHECKVIEW = "CheckView";
+    private final String STEPVIEW = "QQStepView";
+    private final String LETTERSLIDEBAR = "LetterSlideBar";
+
     private List<String> viewList = new ArrayList<>();
     private Fragment fragment;
 
@@ -43,8 +52,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     private void init() {
-        viewList.add("PieView");
-        viewList.add("CheckView");
+        viewList.add(PIEVIEW);
+        viewList.add(CHECKVIEW);
+        viewList.add(STEPVIEW);
+        viewList.add(LETTERSLIDEBAR);
         ArrayAdapter<String> mAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, viewList);
         mListView.setAdapter(mAdapter);
 
@@ -57,11 +68,35 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         FragmentTransaction transaction = manager.beginTransaction();
         transaction.setCustomAnimations(R.anim.anim_enter, R.anim.anim_exit);
         switch (viewList.get(position)) {
-            case "PieView":
-                fragment = manager.findFragmentByTag("PieView");
+            case PIEVIEW:
+                fragment = manager.findFragmentByTag(PIEVIEW);
                 if (fragment == null){
                     fragment = new PieViewFragment();
-                    transaction.add(R.id.view_layout, fragment, "PieView");
+                    transaction.add(R.id.view_layout, fragment, PIEVIEW);
+                }
+                transaction.show(fragment);
+                break;
+            case CHECKVIEW:
+                fragment = manager.findFragmentByTag(CHECKVIEW);
+                if (fragment == null){
+                    fragment = new CheckViewFragment();
+                    transaction.add(R.id.view_layout, fragment, PIEVIEW);
+                }
+                transaction.show(fragment);
+                break;
+            case STEPVIEW:
+                fragment = manager.findFragmentByTag(STEPVIEW);
+                if (fragment == null){
+                    fragment = new StepViewFragment();
+                    transaction.add(R.id.view_layout, fragment, PIEVIEW);
+                }
+                transaction.show(fragment);
+                break;
+            case LETTERSLIDEBAR:
+                fragment = manager.findFragmentByTag(LETTERSLIDEBAR);
+                if (fragment == null){
+                    fragment = new LetterSlideBarFragment();
+                    transaction.add(R.id.view_layout, fragment, PIEVIEW);
                 }
                 transaction.show(fragment);
                 break;

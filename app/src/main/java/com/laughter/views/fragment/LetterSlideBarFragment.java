@@ -8,29 +8,28 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.laughter.views.R;
-import com.laughter.views.model.PieData;
-import com.laughter.views.views.PieView;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.laughter.views.views.LetterSideBar;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
 
-public class PieViewFragment extends Fragment {
+public class LetterSlideBarFragment extends Fragment implements LetterSideBar.LetterTouchListener {
 
-    @BindView(R.id.pie_view) PieView mPieView;
+    @BindView(R.id.tv_letter) TextView tvLetter;
+    @BindView(R.id.letter_side_bar)
+    LetterSideBar mLetterSideBar;
 
     private Unbinder mUnBinder;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_pie_view, container, false);
+        View view = inflater.inflate(R.layout.fragment_letter_slide_bar, container, false);
         mUnBinder = ButterKnife.bind(this, view);
         return view;
     }
@@ -39,14 +38,7 @@ public class PieViewFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        List<PieData> mDataList = new ArrayList<>();
-        mDataList.add(new PieData("jia", 50));
-        mDataList.add(new PieData("jia", 100));
-        mDataList.add(new PieData("jia", 150));
-        mDataList.add(new PieData("jia", 200));
-
-        mPieView.setData(mDataList);
-        mPieView.setStartAngle(0);
+        mLetterSideBar.setTouchListener(this);
     }
 
     @OnClick(R.id.but_close)
@@ -60,5 +52,15 @@ public class PieViewFragment extends Fragment {
     public void onDestroy() {
         mUnBinder.unbind();
         super.onDestroy();
+    }
+
+    @Override
+    public void onTouch(String letter, boolean isTouching) {
+        if (isTouching && !letter.equals("❤") && !letter.equals("#")) {
+            tvLetter.setText(letter);
+            tvLetter.setVisibility(View.VISIBLE);
+        }else {
+            tvLetter.setVisibility(View.GONE);
+        }
     }
 }

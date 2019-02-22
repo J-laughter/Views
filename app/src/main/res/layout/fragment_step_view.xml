@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorGrey"
+    android:elevation="10dp"
+    tools:context=".fragment.PieViewFragment">
+
+    <ImageButton
+        android:id="@+id/but_close"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:background="@color/colorGrey"
+        android:src="@drawable/ic_down"
+        android:contentDescription="@string/todo"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/step_view"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:text="@string/stepview"
+        android:textAllCaps="false"
+        android:textSize="24sp"
+        android:textColor="@color/colorTransBlack" />
+
+    <com.laughter.views.views.QQStepView
+        android:id="@+id/step_view"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        app:stepTextSize="16sp"
+        android:layout_centerInParent="true"/>
+
+    <EditText
+        android:id="@+id/edit_step"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/step_view"
+        android:layout_centerHorizontal="true"
+        android:inputType="number"
+        android:textSize="16sp"
+        android:textAlignment="center" />
+
+    <Button
+        android:id="@+id/but_update_step"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edit_step"
+        android:layout_centerHorizontal="true"
+        android:textSize="16sp"
+        android:minHeight="0dp"
+        android:textAllCaps="false"
+        android:text="@string/start"/>
+
+</RelativeLayout>

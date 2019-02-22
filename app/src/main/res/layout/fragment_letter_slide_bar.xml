@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorGrey"
+    android:elevation="10dp"
+    tools:context=".fragment.PieViewFragment">
+
+    <ImageButton
+        android:id="@+id/but_close"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:background="@color/colorGrey"
+        android:src="@drawable/ic_down"
+        android:contentDescription="@string/todo"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/but_close"
+        android:layout_marginTop="48dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:text="@string/letterslidebar"
+        android:textAllCaps="false"
+        android:textSize="24sp"
+        android:textColor="@color/colorTransBlack" />
+
+    <TextView
+        android:id="@+id/tv_letter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="#ffffff"
+        android:background="@drawable/letter_bg"
+        android:gravity="center"
+        android:visibility="gone"
+        android:layout_centerInParent="true"/>
+
+    <com.laughter.views.views.LetterSideBar
+        android:id="@+id/letter_side_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="42dp"
+        android:layout_alignParentEnd="true"/>
+
+</RelativeLayout>
