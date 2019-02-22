@@ -8,4 +8,5 @@
     <color name="colorTextYellow">#CDDC39</color>
     <color name="colorTextGreen">#689F38</color>
     <color name="colorTransBlack">#8A000000</color>
+    <color name="colorGrey">#eeeeee</color>
 </resources>

@@ -4,106 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.MainActivity"
-    android:layout_marginTop="16dp"
-    android:layout_marginEnd="8dp"
-    android:layout_marginStart="8dp">
+    tools:context=".activity.MainActivity">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center">
+    <ListView
+        android:id="@+id/view_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
-        <com.laughter.views.views.PieView
-            android:id="@+id/pie_view"
-            android:layout_width="120dp"
-            android:layout_height="120dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/pieview"
-            android:textAllCaps="false"
-            android:textSize="16sp"
-            android:textColor="@color/colorTransBlack"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="30dp"
-        android:gravity="center"
-        android:orientation="vertical">
-
-        <com.laughter.views.views.CheckView
-            android:id="@+id/check_view"
-            android:layout_width="88dp"
-            android:layout_height="88dp" />
-
-        <Button
-            android:id="@+id/but_check"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:minHeight="0dp"
-            android:text="@string/check"
-            android:textAllCaps="false" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/checkview"
-            android:textAllCaps="false"
-            android:textSize="16sp"
-            android:textColor="@color/colorTransBlack"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:orientation="vertical">
-
-        <com.laughter.views.views.QQStepView
-            android:id="@+id/step_view"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            app:stepTextSize="16sp"/>
-
-        <EditText
-            android:id="@+id/edit_step"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:textSize="16sp"
-            android:textAlignment="center" />
-
-        <Button
-            android:id="@+id/but_update_step"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:minHeight="0dp"
-            android:textAllCaps="false"
-            android:text="@string/start"/>
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/tv_letter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:textColor="#ffffff"
-        android:background="@drawable/letter_bg"
-        android:gravity="center"
-        android:visibility="gone"
-        android:layout_centerInParent="true"/>
-
-    <com.laughter.views.views.LetterSideBar
-        android:id="@+id/letter_side_bar"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_alignParentEnd="true"/>
+    <FrameLayout
+        android:id="@+id/view_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </RelativeLayout>
