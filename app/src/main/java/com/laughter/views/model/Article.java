@@ -4,11 +4,6 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-/**
- * 作者： 江浩
- * 创建时间： 2018/12/21
- * 描述： com.laughter.network
- */
 public class Article {
 
     private String title;

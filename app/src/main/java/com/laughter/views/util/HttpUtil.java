@@ -11,12 +11,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.List;
 
-/**
- * 作者： 江浩
- * 创建时间： 2019/3/29
- * 版权： 江苏远大信息股份有限公司
- * 描述： com.laughter.designapplication.util
- */
 public class HttpUtil {
     private static final String baseUrl = "https://www.wanandroid.com/";
 

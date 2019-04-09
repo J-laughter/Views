@@ -3,7 +3,6 @@ package com.laughter.views.model;
 /**
  * 作者： laughter_jiang
  * 创建时间： 2019/1/2
- * 版权：
  * 描述： com.laughter.views.model
  */
 public class PieData {

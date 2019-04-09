@@ -9,12 +9,6 @@ import com.laughter.views.model.Article;
 
 import java.util.List;
 
-/**
- * 作者： 江浩
- * 创建时间： 2019/4/9
- * 版权： 江苏远大信息股份有限公司
- * 描述： com.laughter.views.util
- */
 public class JsonUtil {
 
     public static int getErrorCode(String response) {
