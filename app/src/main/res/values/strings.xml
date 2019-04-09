@@ -10,4 +10,6 @@
     <string name="todo">TODO</string>
     <string name="stepview">QQStepView</string>
     <string name="letterslidebar">LetterSlideBar</string>
+    <string name="loading">正在加载...</string>
+    <string name="collect">收藏文章</string>
 </resources>

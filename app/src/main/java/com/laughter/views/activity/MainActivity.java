@@ -13,6 +13,7 @@ import android.widget.ListView;
 import com.laughter.views.R;
 import com.laughter.views.fragment.CheckViewFragment;
 import com.laughter.views.fragment.LetterSlideBarFragment;
+import com.laughter.views.fragment.LoadingListViewFragment;
 import com.laughter.views.fragment.PieViewFragment;
 import com.laughter.views.fragment.StepViewFragment;
 
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private final String CHECKVIEW = "CheckView";
     private final String STEPVIEW = "QQStepView";
     private final String LETTERSLIDEBAR = "LetterSlideBar";
+    private final String LOADINGLISTVIEW = "LoadingListView";
 
     private List<String> viewList = new ArrayList<>();
     private Fragment fragment;
@@ -55,6 +57,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         viewList.add(CHECKVIEW);
         viewList.add(STEPVIEW);
         viewList.add(LETTERSLIDEBAR);
+        viewList.add(LOADINGLISTVIEW);
         ArrayAdapter<String> mAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, viewList);
         mListView.setAdapter(mAdapter);
 
@@ -99,6 +102,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 }
                 transaction.show(fragment);
                 break;
+            case LOADINGLISTVIEW:
+                fragment = manager.findFragmentByTag(LOADINGLISTVIEW);
+                if (fragment == null) {
+                    fragment = new LoadingListViewFragment();
+                    transaction.add(R.id.view_layout, fragment, LOADINGLISTVIEW);
+                }
+                transaction.show(fragment);
             default:
                 break;
         }
